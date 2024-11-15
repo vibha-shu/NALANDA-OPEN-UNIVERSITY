@@ -1,0 +1,96 @@
+<html th:replace="admin/adminbase::layout(~{::section})">
+    <head>
+
+    </head>
+    <body>
+        <section>
+			
+            <div class="row">
+                <h1 class="text-primary text-center fw-bold">Add Study Material</h1>
+				<div th:if="${msg}">
+					<p th:text="${msg}" style="text-align: center; color: green;"></p>
+				</div>
+                <form class="form-group" th:object="${dto}" method="post" enctype="multipart/form-data">
+                    <table class="table-borderd" style="margin:auto; width: 60%;">
+                        <tr>
+                            <td class="text-dark">Select Progrom</td>
+                            <td>
+                                <select class="form-select" th:field="${dto.program}" aria-label="Default select example">
+                                    <option value="">...Select your progrm...</option>
+                                    <option value="Diploma">Diploma</option>
+                                    <option value="Btech">B-Tech</option>
+                                    <option value="Mtech">M-Tech</option>
+                                    <option value="BCA">BCA</option>
+                                    <option value="MCA">MCA</option>
+                                  </select>
+								  
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-dark">Select Branch</td>
+                            <td>
+                                <select class="form-select" th:field="${dto.branch}" aria-label="Default select example">
+                                    <option value="">...Select your branch...</option>
+                                    <option value="Computer Science">Computer Science</option>
+                                    <option value="Information Technology">Information Technology</option>
+                                    <option value="Civil">Civil</option>
+                                    <option value="Electronics">Electronics</option>
+                                    <option value="Mechanical">Mechanical</option>
+                                  </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-dark">Select Year</td>
+                            <td>
+                                <select class="form-select" th:field="${dto.year}" aria-label="Default select example">
+                                    <option value="">...Select your Year...</option>
+                                    <option value="1st Year">1st Year</option>
+                                    <option value="2nd Year">2nd Year</option>
+                                    <option value="3rd Year">3rd Year</option>
+                                    <option value="4th Year">4rt Year</option>
+                                    <option value="Finel Year">Finel Year</option>
+                                  </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-dark">Select Material Type</td>
+                            <td>
+                                <select class="form-control text-dark bg-light" th:field="${dto.materialtype}">
+                                    <option value="smat"> Study Material</option>
+                                    <option value="assign">Assign</option>
+
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-dark">Enter Subject</td>
+                            <td>
+                                <input type="text" th:field="${dto.subject}" class="form-control text-dark bg-light" required>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-dark">Enter Topic</td>
+                            <td>
+                                <input type="text" th:field="${dto.topic}" class="form-control text-dark bg-light" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-dark">Select file</td>
+                            <td>
+                                <input type="file" th:field="${dto.filedata}" class="form-control text-dark bg-light" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <button type="submit" class="btn-outline-primary">Add Material</button>
+                            </td>
+                        </tr>
+
+                    </table>
+                </form>
+            </div>
+        </section>
+    </body>
+</html>

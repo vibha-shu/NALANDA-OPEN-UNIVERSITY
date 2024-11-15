@@ -1,0 +1,48 @@
+<html th:replace="student/studentbase::layout(~{::section})">
+
+<head>
+</head>
+
+<body>
+	<section>
+
+		<div class="row">
+			<section>
+							<div class="row mt-5">
+			                
+								<h2 class="text-center text-dark mt-4" style="font-family:Georgia, 'Times New Roman', Times, serif; font-weight: 700;">GIVE RESPONSE</h2>
+			        <div class="col-sm-6 mx-auto" style="border: 2px solid; height: 370px; background-color:burlywood">
+			            
+			            <form action="" method="post" th:object="${dto}">
+			                <br>
+			                <label for="exampleInputPassword1" class="form-label fw-bold text-primary">SELECT RESPONSE</label>
+			                <select class="form-select" th:field="${dto.responsetype}" aria-label="Default select example" aria-placeholder="SELECT RESPONSE">
+			                    <option value="SELECT RESPONSE TYPE">SELECT RESPONSE TYPE</option>
+			                    <option value="feedback">feedback</option>
+			                    <option value="complain">complain</option>
+			                     
+			                  </select>
+			                  <br>
+			               
+			              <div class="mb-3">
+			                <label for="exampleInputPassword1" class="form-label fw-bold text-primary">ENTER RESPONSE SUBJECT</label>
+			                <input type="text" class="form-control" th:field="${dto.subject}" placeholder="ENter response subject" id="exampleInputPassword1" style="background-color: rgb(220, 233, 214); color: rgb(23, 165, 23);">
+			              </div>
+			              <div class="mb-3">
+			                <label for="exampleInputPassword1" class="form-label fw-bold text-primary">ENTER RESPONSE MESSAGE</label>
+			                <textarea class="form-control bg-light rounded" th:field="${dto.message}" placeholder="enter response message"> </textarea>
+			            </div>
+			            <center><button type="submit" class="btn btn-primary  mt-2">Submit</button></center>
+			            </form>
+			            
+			                    </div>
+			                   </div>
+							
+						</section>
+			 
+		</div>
+
+	</section>
+</body>
+
+</html>
